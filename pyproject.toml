@@ -1,18 +1,15 @@
 [project]
 name = "speak"
 version = "0.2.0"
-description = "Local TTS daemon+client: Kokoro-82M on MLX (Apple Silicon). No system deps."
-requires-python = ">=3.10,<3.13"
+description = "Local TTS daemon+client: Kokoro-82M on MLX (Apple Silicon)."
+requires-python = ">=3.10,<3.14"
 dependencies = [
-    "mlx-audio>=0.2",         # Kokoro on MLX
-    # misaki English G2P, with its *actual* runtime deps declared directly
-    # instead of misaki[en] — the extra over-declares spacy-curated-transformers,
-    # which drags in torch that nothing ever imports (verified misaki 0.9.4).
-    "misaki>=0.9.4,<0.10",    # pinned: dep set audited against this range
-    "espeakng-loader",        # bundled espeak-ng (no brew)
+    "mlx-audio>=0.2", # Kokoro on MLX
+    "misaki>=0.9.4,<0.10",
+    "espeakng-loader",
     "phonemizer-fork",
     "num2words",
-    "spacy>=3.8",             # misaki downloads en_core_web_sm (CPU pipeline)
+    "spacy>=3.8",
     "soundfile>=0.12",
 ]
 
