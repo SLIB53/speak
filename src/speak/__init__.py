@@ -13,8 +13,6 @@ Two entry points:
 Wire protocol (Unix domain socket):
     client -> daemon:  one JSON header line, then raw UTF-8 text until EOF
     daemon -> client:  one JSON status line {"ok": bool, ...}, then WAV bytes
-
-This module is imported by the client, so it must stay stdlib-only.
 """
 
 import os
